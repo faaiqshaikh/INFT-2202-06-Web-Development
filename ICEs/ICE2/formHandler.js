@@ -3,11 +3,9 @@
 let registrationform = document.getElementById("registrationform")
 registrationform.addEventListener("submit", handleInput)
 
-function handleinput(eventObj){
+function handleInput(eventObj){
     eventObj.preventDefault();
-    let isFormValid = true;
     let formInputs = eventObj.target.elements
-
     //Email
     let inputEmail = formInputs.inputEmail4.value
 
@@ -20,6 +18,8 @@ function handleinput(eventObj){
 
     // ZIP Code
     let inputZip = formInputs.inputZip.value
+
+    let isFormValid = validateForm(inputEmail, inputPhone, passwordOne, passwordTwo, inputZip);
     if (isFormValid) {
         confirmDetails([...formInputs])
     }
@@ -45,8 +45,10 @@ function confirmDetails(inputArr) {
     // Add a confirmation button at the bottom of the summary
     let confirmationBtn = document.createElement("button")
     confirmationBtn.innerText = "Confirm Details"
-    confirmationBtn.addEventListener("click", submitRegistration)
-    registrationContainer.append(confirmationBtn)
+    confirmationBtn.type = "submit"
+    confirmationBtn.className = "btn btn-primary";
+    //confirmationBtn.addEventListener("click", submitRegistration)
+    registrationContainer.appendChild(confirmationBtn)
 }
 
 
@@ -84,7 +86,6 @@ function validatePhoneNumber(inputPhone) {
     return true
 }
 
-    // Once the user clicks the confirmation button, call the submitRegistration() function (i.e. use addEventListener())
 function validateEmail(inputEmail) {
     if (!inputEmail.includes("@") || !inputEmail.includes(".")) {
         alert("Email needs to have @ symbol and . !!!!")

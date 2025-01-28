@@ -47,7 +47,51 @@ function confirmDetails(inputArr) {
     confirmationBtn.innerText = "Confirm Details"
     confirmationBtn.addEventListener("click", submitRegistration)
     registrationContainer.append(confirmationBtn)
+}
 
+
+/*
+    Validator Functions Below
+*/
+function validateForm(inputEmail, inputPhone, passwordOne, passwordTwo, inputZip) {
+    if (!validateEmail(inputEmail) || !validatePhoneNumber(inputPhone) || !validatePassword(passwordOne, passwordTwo) || !validateZip(inputZip)) {
+        return false
+    }
+    return true
+}
+
+function validateZip(inputZip) {
+    if (inputZip.length !== 6) {
+        alert("Please input a valid zipcode.")
+        return false
+    }
+     return true
+}
+
+function validatePassword(passwordOne, passwordTwo) {
+    if (passwordOne !== passwordTwo) {
+        alert("Passwords do not match. Please check that both passwords match")
+        return false
+    }
+    return true
+}
+
+function validatePhoneNumber(inputPhone) {
+    if (inputPhone.length !== 10) {
+        alert("Please put in a valid phone number")
+        return false
+    }
+    return true
+}
 
     // Once the user clicks the confirmation button, call the submitRegistration() function (i.e. use addEventListener())
+function validateEmail(inputEmail) {
+    if (!inputEmail.includes("@") || !inputEmail.includes(".")) {
+        alert("Email needs to have @ symbol and . !!!!")
+        return false
+    }
+    return true
 }
+/*
+    End of Validator Functions
+*/

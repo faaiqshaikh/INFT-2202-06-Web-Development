@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const nav = document.getElementById("nav-bar");
     const container = `
     <div class="container">
-        <a class="navbar-brand" href="index.html">FaiqsHub</a>
+        <a class="navbar-brand" href="index.html"><li class="fa-solid fa-cat"></li> FaiqsHub</a>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto" id="nav-links"></ul>
         </div>
@@ -55,19 +55,25 @@ document.addEventListener("DOMContentLoaded", function() {
     // Dynamic Page Content Injection
     const pageContent = {
         "index.html": `
-            <header>
-                <h1>Welcome to My Website</h1>
-                <p>.</p>
-            </header>
+            <div class="bg-dark text-white d-flex align-items-center justify-content-center vh-100 background">
+                <h1>Welcome to <br><li class="fa-solid fa-cat"></li>FaiqsHub</h1>
+                <p>This website illustrates my DOM manipulation skills, <br>All pages on this site is displayed dynamically.
+                </br>please feel free to <a href="contact.html">get in touch</a> for collab!</p>    
+            </div>
         `,
         "product.html": `
-            <h1>My Favorite Media</h1>
-            <p>Here are three of my favorite pieces of media:</p>
-            <ul>
-                <li><strong>Book:</strong> The Hobbit</li>
-                <li><strong>Movie:</strong> Inception</li>
-                <li><strong>Music:</strong> Bohemian Rhapsody - Queen</li>
-            </ul>
+        <div class="d-flex align-items-center justify-content-center vh-100 text-white text-center">
+            <div class="p-5 rounded shadow-lg bg-dark bg-opacity-75">
+                <h1 class="display-4 fw-bold text-warning">My Favorite Media</h1>
+                <p class="lead fst-italic">Here are three of my favorite pieces of media:</p>
+                <ul class="list-unstyled">
+                    <li class="fs-4"><i class="fa-solid fa-book text-primary"></i> <strong>Book:</strong> The Hobbit</li>
+                    <li class="fs-4"><i class="fa-solid fa-film text-danger"></i> <strong>Movie:</strong> Inception</li>
+                    <li class="fs-4"><i class="fa-solid fa-music text-success"></i> <strong>Music:</strong> Bohemian Rhapsody - Queen</li>
+                </ul>
+            </div>
+        </div>
+
         `,
         "services.html": `
             <h1>My Services</h1>

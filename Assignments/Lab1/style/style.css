@@ -28,21 +28,32 @@ form {
 }
 
 .background{
-    background: url('https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover; 
+    /* this image is from external src: pexels.com*/
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url('https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover; 
     background-attachment: fixed;
 }
-.background h1{
+
+.background h1, .background h1 {
     text-shadow: rgb(0, 0, 0) 1px 0 10px;
 }
 
-.background p {
+.background p{
     border-left: 1px solid #ffffff ;
     padding-left: 2em;
     margin-left: 2em;
     min-height: 7em;
     align-content: center;
-    backdrop-filter: blur(5px);
 }
 .background p a {
     color: white;
+}
+
+.services-bg{
+    /* this image is from external src: pexels.com*/
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url('https://images.pexels.com/photos/10540928/pexels-photo-10540928.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover; 
+    background-attachment: fixed;
+}
+
+.services-card{
+    background-color: rgba(0, 0, 0, 0.5) !important;
 }

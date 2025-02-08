@@ -40,8 +40,8 @@ document.addEventListener("DOMContentLoaded", function() {
         { name: "Products", link: "product.html", icon: "fa-solid fa-box-open" }, // Changed from "Products"
         { name: "Services", link: "services.html", icon: "fa-solid fa-tools" },
         { name: "About Me", link: "about.html", icon: "fa-solid fa-info" },
-        { name: "Contact", link: "contact.html", icon: "fa-solid fa-phone" },
-        { name: "Human Resources", link: "human-resource.html", icon: "fa-solid fa-user" } // Dynamically added
+        { name: "Human Resources", link: "human-resource.html", icon: "fa-solid fa-user" },
+        { name: "Contact", link: "contact.html", icon: "fa-solid fa-phone" }
     ];
 
     const navList = document.getElementById("nav-links");
@@ -62,31 +62,147 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>
         `,
         "product.html": `
-        <div class="d-flex align-items-center justify-content-center vh-100 text-white text-center">
-            <div class="p-5 rounded shadow-lg bg-dark bg-opacity-75">
-                <h1 class="display-4 fw-bold text-warning">My Favorite Media</h1>
-                <p class="lead fst-italic">Here are three of my favorite pieces of media:</p>
-                <ul class="list-unstyled">
-                    <li class="fs-4"><i class="fa-solid fa-book text-primary"></i> <strong>Book:</strong> The Hobbit</li>
-                    <li class="fs-4"><i class="fa-solid fa-film text-danger"></i> <strong>Movie:</strong> Inception</li>
-                    <li class="fs-4"><i class="fa-solid fa-music text-success"></i> <strong>Music:</strong> Bohemian Rhapsody - Queen</li>
-                </ul>
+        <div class="container mt-5">
+            <div class="row">
+                <!-- Card 1: Book -->
+                <div class="col-md-4">
+                    <div class="card shadow-lg">
+                    <!-- images are used from external src: cloudfront.net-->
+                        <img src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781608873869/the-hobbit-9781608873869_hr.jpg" class="card-img-top" alt="The Hobbit Book Cover">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">📖 The Hobbit</h5>
+                            <p class="card-text">
+                                J.R.R. Tolkien's <b>The Hobbit</b> is an enchanting adventure that takes readers to the world of Middle-earth. 
+                                Join Bilbo Baggins, a reluctant hero, as he embarks on a thrilling journey filled with dragons, treasures, and courage.
+                            </p>
+                            <a href="https://en.wikipedia.org/wiki/The_Hobbit:_An_Unexpected_Journey" class="btn btn-warning">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Movie -->
+                <div class="col-md-4">
+                    <div class="card shadow-lg">
+                        <!-- images are used from external src: m.media.amazon.com-->
+                        <img src="https://m.media-amazon.com/images/M/MV5BMTM0MjUzNjkwMl5BMl5BanBnXkFtZTcwNjY0OTk1Mw@@._V1_.jpg" class="card-img-top" alt="Inception Movie Poster">
+                        <div class="card-body">
+                            <h5 class="card-title text-danger">🎬 Inception</h5>
+                            <p class="card-text">
+                                Christopher Nolan’s <b>Inception</b> is a mind-bending thriller that explores dreams within dreams. 
+                                With stunning visuals, a gripping storyline, and an unforgettable score, it keeps viewers questioning reality.
+                            </p>
+                            <a href="https://www.youtube.com/watch?v=LifqWf0BAOA" class="btn btn-danger">Watch Trailer</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Music -->
+                <div class="col-md-4">
+                    <div class="card shadow-lg">
+                    <!-- images are used from external src: m.media.amazon.com-->
+                        <img src="https://m.media-amazon.com/images/M/MV5BMTA2NDc3Njg5NDVeQTJeQWpwZ15BbWU4MDc1NDcxNTUz._V1_.jpg" class="card-img-top" alt="Bohemian Rhapsody Album Cover">
+                        <div class="card-body">
+                            <h5 class="card-title text-success">🎵 Bohemian Rhapsody - Queen</h5>
+                            <p class="card-text">
+                                *Bohemian Rhapsody* is a rock masterpiece by Queen, blending opera, ballad, and hard rock seamlessly. 
+                                With Freddie Mercury’s powerful vocals, it remains one of the greatest songs of all time.
+                            </p>
+                            <a href="https://music.youtube.com/watch?v=utwMHfDZ6SA" class="btn btn-success">Listen Now</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
         `,
         "services.html": `
-            <h1>My Services</h1>
-            <p>Here are three services I offer:</p>
-            <ul>
-                <li>Web Development</li>
-                <li>Graphic Design</li>
-                <li>SEO Optimization</li>
-            </ul>
+            <div class="services-bg ">
+            <div class="container text-white justify-content-center align-items-center vh-100">
+                <h2 class="text-center mb-5">My Expertise</h2>
+                <div class="row">
+                <!-- Service 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card text-white services-card">
+                    <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D" class="card-img-top" alt="Custom Programming">
+                    <div class="card-body">
+                        <h5 class="card-title">Custom Programming</h5>
+                        <p class="card-text">I offer custom programming solutions tailored to your business needs, including web apps, desktop software, and more.</p>
+                        
+                    </div>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card text-white services-card">
+                    <img src="https://wpengine.com/wp-content/uploads/2018/09/website-design-patterns_1200x627.png" class="card-img-top" alt="Web Design">
+                    <div class="card-body">
+                        <h5 class="card-title">Web Design</h5>
+                        <p class="card-text">Creating beautiful and responsive websites that provide a seamless user experience and are optimized for all devices.</p>
+                        
+                    </div>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card text-white services-card">
+                    <img src="https://img.freepik.com/free-photo/smartphone-with-user-interface-concept_52683-104212.jpg?semt=ais_hybrid" class="card-img-top" alt="Mobile Development">
+                    <div class="card-body">
+                        <h5 class="card-title">Mobile Development</h5>
+                        <p class="card-text">Building cross-platform mobile applications that provide high performance and an excellent user experience.</p>
+                    </div>
+                    </div>
+                </div>
+                <h2 class="text-center mb-5"><a href="https://plum-helsa-66.tiiny.site" class="btn btn-primary w-100">View Resume</a></h2>
+                </div>
+            </div>
+            </div>
         `,
         "about.html": `
-            <h1>About Me</h1>
-            <p></p>
+            <div class="container about-me-container">
+                <div class="row justify-content-center">
+                    <div class="col-md-4 text-center">
+                        <!-- Avatar/Image Section -->
+                        <img src="https://images.pexels.com/photos/6241197/pexels-photo-6241197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Your Avatar" class="avatar mb-4">
+                    </div>
+                    <div class="col-md-8">
+                        <!-- Introductory text section -->
+                        <div class="section-title">Hello! I'm [Your Name]</div>
+                        <p class="intro-text">
+                            Hello! My name is [Your Name], and I’m passionate about [insert a hobby or interest]. I'm fortunate to have an amazing family who constantly supports me, including my [mention family members, like kids, spouse, pets, etc.]. When I'm not spending time with them, I enjoy [mention hobbies, volunteer work, or community involvement]. 
+                            I also volunteer at [insert volunteer organization or cause] because I believe in [insert reason why it's important to you]. One of my favorite activities is playing [mention sport or team you are part of], which allows me to stay active and connect with others.
+                            In my free time, I love [mention more hobbies or interests, such as reading, painting, etc.]. I am always looking to learn new things and grow both personally and professionally.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <div class="section-title">My Family & Pets</div>
+                        <p class="intro-text">
+                            I’m lucky to have a wonderful family who keeps me grounded. My [mention family members, like kids or siblings] are my biggest source of joy. We often spend weekends [mention family activities, such as hiking, baking, or watching movies together]. I also have a beloved pet, [mention pet type and name], who brings so much joy and chaos into our home. [Include a fun or heartwarming anecdote about your pet].
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <div class="section-title">Volunteer Work & Community</div>
+                        <p class="intro-text">
+                            Giving back to the community is something that is incredibly important to me. I volunteer at [insert volunteer location] where I help with [describe what you do]. It's a rewarding experience that allows me to make a positive impact while learning from others. Whether it’s organizing events, participating in charity runs, or helping out at local shelters, I always feel fulfilled by the work we do. 
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Add another row for more images or hobbies if necessary -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <div class="section-title">Other Hobbies & Interests</div>
+                        <p class="intro-text">
+                            Aside from spending time with family and volunteering, I have a few other hobbies that keep me busy. I enjoy [mention another hobby or activity, such as photography, knitting, etc.]. I also love exploring new places and trying new things, so I often take short trips to discover different cultures, foods, and people. Life is an adventure, and I try to make the most of it every day.
+                        </p>
+                    </div>
+                </div>
+            </div>
         `,
         "contact.html": `
             <h2 class="text-center h2-pd"><li class="fa-solid fa-phone"></li> Get In Touch</h2>

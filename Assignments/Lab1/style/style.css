@@ -18,3 +18,11 @@
         transform: translateY(0);
     }
 }
+
+form {
+    background-color: #efefef;
+}
+
+.h2-pd {
+    padding-top: 20px;
+}

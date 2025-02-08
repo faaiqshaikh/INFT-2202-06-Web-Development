@@ -1,6 +1,25 @@
-// Student Name: Mohammedfaiq shaikh
-// Student ID: 
+// Student Name: Mohammedfaiq Shaikh
+// Student ID: 100905727
+// Date Completed: 08-02-2025
 
+// Handle form submission
+function handleSubmit(event) {
+    event.preventDefault(); // Prevent page refresh
+
+    // Get form value
+    let name = document.getElementById("name").value;
+
+    // Notify user
+    document.getElementById("status").innerText = `User: ${name}, getting your info...`;
+
+    // Redirect after 3 seconds
+    setTimeout(() => {
+        window.location.href = "contact.html";
+    }, 3000);
+}
+
+
+// When DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function() {
     
     // Dynamic body container
@@ -32,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
         listItem.innerHTML = `<a class="nav-link" href="${item.link}">${item.icon ? `<i class="${item.icon}"></i> ` : ""}${item.name}</a>`;
         navList.appendChild(listItem);
     });
-
+    
     // Dynamic Page Content Injection
     const pageContent = {
         "index.html": `
@@ -64,13 +83,34 @@ document.addEventListener("DOMContentLoaded", function() {
             <p></p>
         `,
         "contact.html": `
-            <h1>Get in touch</h1>
-            <p></p>
+            <h2 class="text-center h2-pd"><li class="fa-solid fa-phone"></li> Get In Touch</h2>
+                <form onsubmit="handleSubmit(event)" class="w-50 mx-auto p-4 border rounded">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contact" class="form-label">Contact Number</label>
+                        <input type="tel" class="form-control" id="contact" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Short Message</label>
+                        <textarea class="form-control" id="message" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Submit</button>
+                </form>
+
+            <!-- Status Message -->
+            <p id="status" class="text-center mt-3 text-success"></p>
         `
     };
 
     const page = window.location.pathname.split("/").pop() || "index.html";
-    document.getElementById("content").innerHTML = pageContent[page];
+    document.getElementById("content").innerHTML = pageContent[page] || "<h1>Page Not Found</h1>";
 
     // Dynamic Copyright
     document.getElementById("copyright").innerHTML = `© ${new Date().getFullYear()} FaiqsHub`;

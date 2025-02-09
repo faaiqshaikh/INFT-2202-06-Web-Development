@@ -166,12 +166,9 @@ document.addEventListener("DOMContentLoaded", function() {
                     </div>
                     <div class="col-md-8">
                         <!-- Introductory text section -->
-                        <div class="section-title">Hello! I'm [Your Name]</div>
+                        
                         <div class="section-title">Hello! I'm Faiq Shaikh</div>
                         <p class="intro-text">
-                            Hello! My name is [Your Name], and I’m passionate about [insert a hobby or interest]. I'm fortunate to have an amazing family who constantly supports me, including my [mention family members, like kids, spouse, pets, etc.]. When I'm not spending time with them, I enjoy [mention hobbies, volunteer work, or community involvement]. 
-                            I also volunteer at [insert volunteer organization or cause] because I believe in [insert reason why it's important to you]. One of my favorite activities is playing [mention sport or team you are part of], which allows me to stay active and connect with others.
-                            In my free time, I love [mention more hobbies or interests, such as reading, painting, etc.]. I am always looking to learn new things and grow both personally and professionally.
                             Hello! My name is Faiq Shaikh, and I’m passionate about Web Development. I'm fortunate to have an amazing family who constantly supports me, including my mom, dad and my sister. When I'm not spending time with them, I enjoy hanging out with friends. 
                             I also volunteer at dcmsa because I believe in equity and diversity. One of my favorite activities is playing cricket, which allows me to stay active and connect with others.
                             In my free time, I love to be a sketch artist. I am always looking to learn new things and grow both personally and professionally.
@@ -184,7 +181,6 @@ document.addEventListener("DOMContentLoaded", function() {
                         <div class="section-title">My Family & Pets</div>
                         <div class="section-title">My Family</div>
                         <p class="intro-text">
-                            I’m lucky to have a wonderful family who keeps me grounded. My [mention family members, like kids or siblings] are my biggest source of joy. We often spend weekends [mention family activities, such as hiking, baking, or watching movies together]. I also have a beloved pet, [mention pet type and name], who brings so much joy and chaos into our home. [Include a fun or heartwarming anecdote about your pet].
                             I’m lucky to have a wonderful family who keeps me grounded. My mom, dad and my sister are my biggest source of joy. We often spend weekends watching movies together.
                         </p>
                     </div>
@@ -192,19 +188,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 
                 <div class="row mt-5">
                     <div class="col-12">
-                        <div class="section-title">Volunteer Work & Community</div>
-                        <p class="intro-text">
-                            Giving back to the community is something that is incredibly important to me. I volunteer at [insert volunteer location] where I help with [describe what you do]. It's a rewarding experience that allows me to make a positive impact while learning from others. Whether it’s organizing events, participating in charity runs, or helping out at local shelters, I always feel fulfilled by the work we do. 
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Add another row for more images or hobbies if necessary -->
-                <div class="row mt-5">
-                    <div class="col-12">
                         <div class="section-title">Other Hobbies & Interests</div>
                         <p class="intro-text">
-                            Aside from spending time with family and volunteering, I have a few other hobbies that keep me busy. I enjoy [mention another hobby or activity, such as photography, knitting, etc.]. I also love exploring new places and trying new things, so I often take short trips to discover different cultures, foods, and people. Life is an adventure, and I try to make the most of it every day.
                             Aside from spending time with family, I have a few other hobbies that keep me busy. I enjoy playing cricket. I also love exploring new places and trying new things, so I often take short trips to discover different cultures, foods, and people. Life is an adventure, and I try to make the most of it every day.
                         </p>
                     </div>

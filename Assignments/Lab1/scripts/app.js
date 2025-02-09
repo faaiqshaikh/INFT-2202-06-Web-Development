@@ -178,7 +178,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 
                 <div class="row mt-5">
                     <div class="col-12">
-                        <div class="section-title">My Family & Pets</div>
                         <div class="section-title">My Family</div>
                         <p class="intro-text">
                             I’m lucky to have a wonderful family who keeps me grounded. My mom, dad and my sister are my biggest source of joy. We often spend weekends watching movies together.

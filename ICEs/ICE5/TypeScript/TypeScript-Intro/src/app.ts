@@ -1,5 +1,5 @@
-import { Movie } from './types/movie.interface.js';
-import { movies } from './data/data.js';
+import { Movie } from './src/types/movie.interface.js';
+import { movies } from './src/data/data.js';
 
 class MovieLibrary {
     private movies: Movie[];

@@ -15,4 +15,58 @@ $(document).ready(function () {
         }
     });
 
+    // b. Register Page - Hide error message div initially
+    $("#ErrorMessage").hide();
+
+    $("#registerForm").submit(function (event) {
+        event.preventDefault(); // f. Prevent form submission
+        let firstName = $("#firstName").val().trim();
+        let lastName = $("#lastName").val().trim();
+        let email = $("#email").val().trim();
+        let password = $("#passwordRegister").val();
+        let confirmPassword = $("#confirmPassword").val();
+        let errorMessage = "";
+
+        // c. First and Last Name validation (minimum 2 characters)
+        if (firstName.length < 2 || lastName.length < 2) {
+            errorMessage += "First and Last Name must be at least 2 characters.<br>";
+        }
+
+        // d. Email validation (minimum length 8 and must contain '@')
+        if (email.length < 8 || !email.includes("@")) {
+            errorMessage += "Email must be at least 8 characters and contain '@'.<br>";
+        }
+
+        // e. Password validation (must match & be at least 6 characters)
+        if (password.length < 6) {
+            errorMessage += "Password must be at least 6 characters.<br>";
+        }
+        if (password !== confirmPassword) {
+            errorMessage += "Passwords do not match.<br>";
+        }
+
+        // Display error messages if any
+        if (errorMessage) {
+            $("#ErrorMessage").html(errorMessage).show();
+        } else {
+            $("#ErrorMessage").hide();
+
+            // g. User Class - Create and store user object
+            class User {
+                constructor(firstName, lastName, email, password) {
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                    this.email = email;
+                    this.password = password;
+                }
+            }
+
+            // h. Create a User instance and log to console
+            let newUser = new User(firstName, lastName, email, password);
+            console.log(newUser);
+
+            // Clear the form after successful validation
+            $("#registerForm")[0].reset();
+        }
+    });
 });

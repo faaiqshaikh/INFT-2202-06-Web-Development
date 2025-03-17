@@ -11,7 +11,7 @@ Date: 15/03/2025
     <title>Login</title>
     <link rel="stylesheet" href="style/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="app.js" defer></script>
+    <script src="scripts/app.js" defer></script>
 </head>
 <body>
     <nav>
@@ -19,9 +19,8 @@ Date: 15/03/2025
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Register</a></li>
-            <li><a href="#" id="usernameDisplay"></a></li>
+            <li><a href="login.html" id="login">Login</a></li>
+            <li><a href="register.html" id="register">Register</a></li>
         </ul>
     </nav>
 
@@ -29,11 +28,13 @@ Date: 15/03/2025
         <h2>Login</h2>
         <form id="loginForm">
             <label for="username">Username:</label>
-            <input type="text" id="username" required>
-            
+            <input type="text" id="username">
+            <span class="error" id="usernameError" style="color: red; display: none;">Username is required</span>
+            <br>
             <label for="password">Password:</label>
-            <input type="password" id="password" required>
-            
+            <input type="password" id="password">
+            <span class="error" id="passwordError" style="color: red; display: none;">Password is required</span>
+            <br>    
             <button type="submit">Login</button>
         </form>
     </div>

@@ -1,72 +1,143 @@
 $(document).ready(function () {
-    // a. Login Page - Insert username in navbar after Contact Us link
+    // Login Page - Insert username in navbar after Contact Us link
     $("#loginForm").submit(function (event) {
-        event.preventDefault();
+        event.preventDefault(); // Prevent form submission
+
         let username = $("#username").val().trim();
         let password = $("#password").val().trim();
+        let isValid = true;
 
-        if (username && password) {
-            // Remove existing username if present
-            $("#usernameDisplay").remove();
-            // Insert new username
-            $("<li id='usernameDisplay' class='navbar-text' style='margin-left: 10px; font-weight: bold;'>Welcome, " + username + "</li>").insertAfter("nav ul li:nth-child(3)");
-        } else {
-            alert("Please enter a valid username and password.");
+        // Validate Username
+        if (username === "") {
+            $("#usernameError").show();
+            isValid = false;
+        } 
+        else if (username.length < 2) {
+            $("#usernameError").text("Username must be at least 2 characters");
+            $("#usernameError").show();
+            isValid = false;
+        }
+        else {
+            $("#usernameError").hide();
+        }
+
+        // Validate Password
+        if (password === "") {
+            $("#passwordError").show();
+            isValid = false;
+        }
+        else if (password.length < 6) {
+            $("#passwordError").text("Password must be at least 6 characters");
+            $("#passwordError").show();
+            isValid = false;
+        } 
+        else {
+            $("#passwordError").hide();
+        }
+
+        // If all inputs are valid, proceed with login
+        if (isValid) {
+            // Remove existing username display if present
+            let existingUsername = $("#usernameDisplay");
+            if (existingUsername.length) {
+                existingUsername.remove();
+            }
+
+            // Create and append new <li> element for the username
+            let newUsernameLi = $("<li id='usernameDisplay'><a>Welcome, " + username + "</a></li>");
+            $("nav ul li:nth-child(3)").after(newUsernameLi); // Insert after the 3rd item (index 2)
+
+            // Change login button text to "logout" and show it
+            $("#login").text("logout");
+
+            // Remove the register button
+            $("#register").remove();
+
+            alert("Logged In successfully😊!");
         }
     });
+
+    $("#login").click(function() {
+        if ($("#login").text().trim() === "logout") {
+            $("#login").text("login");
+        }
+    });
+    
+    // -------------------------------------login page validation ends here -----------------------------------------
+
 
     // b. Register Page - Hide error message div initially
     $("#ErrorMessage").hide();
 
+    // User class definition
+    class User {
+        constructor(firstName, lastName, username, email, password) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.username = username;
+            this.email = email;
+            this.password = password;
+        }
+    }
+
+    // Handle form submission
     $("#registerForm").submit(function (event) {
-        event.preventDefault(); // f. Prevent form submission
+        event.preventDefault(); 
+
+        // Get form values
         let firstName = $("#firstName").val().trim();
         let lastName = $("#lastName").val().trim();
         let email = $("#email").val().trim();
-        let password = $("#passwordRegister").val();
-        let confirmPassword = $("#confirmPassword").val();
+        let password = $("#password").val().trim();
+        let confirmPassword = $("#confirmPassword").val().trim();
+
+        let isValid = true;
         let errorMessage = "";
 
-        // c. First and Last Name validation (minimum 2 characters)
-        if (firstName.length < 2 || lastName.length < 2) {
-            errorMessage += "First and Last Name must be at least 2 characters.<br>";
+        // Validate First Name (min length of 2 characters)
+        if (firstName.length < 2) {
+            errorMessage += "First Name must be at least 2 characters long.<br>";
+            isValid = false;
         }
 
-        // d. Email validation (minimum length 8 and must contain '@')
+        // Validate Last Name (min length of 2 characters)
+        if (lastName.length < 2) {
+            errorMessage += "Last Name must be at least 2 characters long.<br>";
+            isValid = false;
+        }
+
+        // Validate Email (min length of 8 and contains '@')
         if (email.length < 8 || !email.includes("@")) {
             errorMessage += "Email must be at least 8 characters and contain '@'.<br>";
+            isValid = false;
         }
 
-        // e. Password validation (must match & be at least 6 characters)
+        // Validate Password (at least 6 characters)
         if (password.length < 6) {
-            errorMessage += "Password must be at least 6 characters.<br>";
-        }
-        if (password !== confirmPassword) {
-            errorMessage += "Passwords do not match.<br>";
+            errorMessage += "Password must be at least 6 characters long.<br>";
+            isValid = false;
         }
 
-        // Display error messages if any
-        if (errorMessage) {
+        // Validate Confirm Password (must match Password)
+        if (confirmPassword !== password) {
+            errorMessage += "Password and Confirm Password must match.<br>";
+            isValid = false;
+        }
+
+        // If there are errors, display the message
+        if (!isValid) {
             $("#ErrorMessage").html(errorMessage).show();
         } else {
+            // Hide error message and proceed
             $("#ErrorMessage").hide();
-
-            // g. User Class - Create and store user object
-            class User {
-                constructor(firstName, lastName, email, password) {
-                    this.firstName = firstName;
-                    this.lastName = lastName;
-                    this.email = email;
-                    this.password = password;
-                }
-            }
-
-            // h. Create a User instance and log to console
-            let newUser = new User(firstName, lastName, email, password);
-            console.log(newUser);
-
-            // Clear the form after successful validation
+            // Create an instance of the User class
+            let user = new User(firstName, lastName, username, email, password);
+            // Clear the form fields
             $("#registerForm")[0].reset();
+            
+            alert("Registration successful!");
         }
     });
+
+    
 });

@@ -16,32 +16,36 @@ Date: 15/03/2025
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
             <li><a href="login.html">Login</a></li>
             <li><a href="register.html">Register</a></li>
             <li><a href="#" id="usernameDisplay"></a></li>
         </ul>
     </nav>
 
-    <h2>Register</h2>
-    <div id="ErrorMessage"></div>
+    <div class="container">
+        <h2>Register</h2>
+        <div id="ErrorMessage"></div>
 
-    <form id="registerForm">
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" required>
-        
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" required>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" required>
-        
-        <label for="password">Password:</label>
-        <input type="password" id="passwordRegister" required>
-        
-        <label for="confirmPassword">Confirm Password:</label>
-        <input type="password" id="confirmPassword" required>
-        
-        <button type="submit">Register</button>
-    </form>
+        <form id="registerForm">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" required>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="passwordRegister" required>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" required>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
 </body>
 </html>

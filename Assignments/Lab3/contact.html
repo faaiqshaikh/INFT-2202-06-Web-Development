@@ -1,0 +1,56 @@
+<!-- 
+Mohammedfaiq Shaikh - 100905727
+Date: 15/03/2025
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="#" id="usernameDisplay"></a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>If you have any questions, feedback, or need support, feel free to reach out using the form below.</p>
+
+        <form id="contactForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email address" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+
+        <div id="contactMessage" class="success-message">Message Sent Successfully!</div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#contactForm").submit(function(event) {
+                event.preventDefault();
+                $("#contactMessage").show();
+                $("#contactForm")[0].reset();
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Navbar Styling */
+nav {
+    background-color: #161a1e;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Page Container */
+.container {
+    width: 50%;
+    margin: 30px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Forms Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Error & Success Messages */
+#ErrorMessage {
+    color: red;
+    background-color: #ffcccc;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    display: none;
+}
+
+#contactMessage {
+    color: green;
+    background-color: #ccffcc;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 80%;
+    }
+}
+
+.background{
+    /* this image is from external src: pexels.com*/
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url('https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover; 
+    background-attachment: fixed;
+}
+
+.background h1, .background h1 {
+    text-shadow: rgb(0, 0, 0) 1px 0 10px;
+}
+
+.background p{
+    border-left: 1px solid #ffffff ;
+    padding-left: 2em;
+    margin-left: 2em;
+    min-height: 7em;
+    align-content: center;
+}
+.background p a {
+    color: white;
+}
+

@@ -1,6 +1,6 @@
 //Mohammedfaiq Shaikh - 100905727
 
-// models/Animal.js
+// model/Animal.js
 const mongoose = require('mongoose');
 
 const animalSchema = new mongoose.Schema({

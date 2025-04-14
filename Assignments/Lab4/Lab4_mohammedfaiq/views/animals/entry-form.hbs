@@ -1,0 +1,44 @@
+<div class="card shadow">
+  <div class="card-header bg-primary text-white">
+    <h4>Add an Animal to the Database</h4>
+  </div>
+  <div class="card-body">
+    <form action="/add" method="POST">
+      <div class="mb-3">
+        <label class="form-label">Zoo</label>
+        <input type="text" class="form-control" name="zoo" required>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Scientific Name</label>
+          <input type="text" class="form-control" name="scientificName" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Common Name</label>
+          <input type="text" class="form-control" name="commonName" required>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Gender</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gender" value="Male" required>
+          <label class="form-check-label">Male</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gender" value="Female">
+          <label class="form-check-label">Female</label>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Date of Birth</label>
+        <input type="date" class="form-control" name="dateOfBirth" required>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" name="isTransportable">
+        <label class="form-check-label">Transportable</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Animal</button>
+      <button type="reset" class="btn btn-secondary">Reset</button>
+    </form>
+  </div>
+</div>

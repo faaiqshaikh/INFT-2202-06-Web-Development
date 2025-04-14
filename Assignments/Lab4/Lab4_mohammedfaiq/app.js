@@ -6,49 +6,39 @@
 * Date Completed: 2025-Apr-14
 */
 
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
-const dotenv = require('dotenv');
 const exphbs = require('express-handlebars');
-const bodyParser = require('body-parser');
-
-// Load environment variables
-dotenv.config();
-
-
+const animalRoutes = require('./routes/animal');
 
 const app = express();
 
+// MongoDB Connection
+mongoose.connect('mongodb+srv://faiqsmongodb:sqX1hbl7QVUcLap4@lab4cluster.6hjnxgp.mongodb.net/Lab4Database?retryWrites=true&w=majority')
+  .then(() => console.log('Connected to MongoDB'))
+  .catch(err => console.error('MongoDB connection error:', err));
 
-// Middleware
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'public')));
+// Handlebars Setup
+app.engine('.hbs', exphbs.engine({
+  extname: '.hbs',           
+  defaultLayout: 'main',      
+  layoutsDir: path.join(__dirname, 'views/layouts'),
+  partialsDir: path.join(__dirname, 'views/partials'),
+  partialsDir: path.join(__dirname, 'views/animals')
+}));
 
-// Set Handlebars view engine
-app.engine('.hbs', exphbs.engine({ extname: '.hbs', defaultLayout: 'main' }));
 app.set('view engine', '.hbs');
 
-// MongoDB connection
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => console.log('✅ Connected to MongoDB'))
-.catch(err => console.error('❌ MongoDB connection error:', err));
+// Middleware
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true }));
 
 // Routes
-const animalRoutes = require('./routes/animal');
-app.use('/animals', animalRoutes);
+app.use('/', animalRoutes);
 
-// Home redirect
-app.get('/', (req, res) => {
-  res.redirect('/animals');
-});
-
-// Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+// Start Server
+app.listen(3000, () => {
+  console.log(`Server running on port 3000`);
 });

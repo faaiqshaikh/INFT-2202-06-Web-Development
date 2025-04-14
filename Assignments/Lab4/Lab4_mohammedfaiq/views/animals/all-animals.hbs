@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h2>Animal List</h2>
+  <a href="/add" class="btn btn-success">Add New Animal</a>
+</div>
+
+{{#each animals}}
+<div class="card mb-3 shadow-sm">
+  <div class="card-body">
+    <h5 class="card-title">{{commonName}} ({{givenName}})</h5>
+    <p class="mb-1"><strong>Zoo:</strong> {{zoo}}</p>
+    <p class="mb-1"><strong>Scientific Name:</strong> <em>{{scientificName}}</em></p>
+    <p class="mb-1"><strong>Gender:</strong> {{gender}}</p>
+    <p class="mb-1"><strong>Age:</strong> {{age}} years</p>
+    <p class="mb-1"><strong>Transportable:</strong> {{#if isTransportable}}Yes{{else}}No{{/if}}</p>
+    <a href="/edit/{{_id}}" class="btn btn-sm btn-warning mt-2">Edit</a>
+  </div>
+</div>
+{{/each}}

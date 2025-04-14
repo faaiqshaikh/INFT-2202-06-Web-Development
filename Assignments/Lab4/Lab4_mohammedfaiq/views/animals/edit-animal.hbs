@@ -1,0 +1,30 @@
+<div class="card shadow">
+  <div class="card-header bg-warning">
+    <h4>Edit Animal: {{animal.commonName}}</h4>
+  </div>
+  <div class="card-body">
+    <form action="/edit/{{animal._id}}" method="POST">
+      <!-- Same fields as entry-form.hbs but with values pre-filled -->
+      <div class="mb-3">
+        <label class="form-label">Zoo</label>
+        <input type="text" class="form-control" name="zoo" value="{{animal.zoo}}" required>
+      </div>
+      <!-- Include all other fields similarly -->
+      
+      <div class="d-flex justify-content-between mt-4">
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a href="/list" class="btn btn-outline-secondary">Cancel</a>
+        <button 
+          type="button" 
+          class="btn btn-danger" 
+          onclick="if(confirm('Delete this animal?')) { document.getElementById('delete-form').submit(); }"
+        >
+          Delete
+        </button>
+      </div>
+    </form>
+    
+    <!-- Hidden form for delete action -->
+    <form id="delete-form" action="/delete/{{animal._id}}" method="POST" class="d-none"></form>
+  </div>
+</div>

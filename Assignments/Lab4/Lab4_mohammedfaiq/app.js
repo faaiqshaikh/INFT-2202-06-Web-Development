@@ -20,14 +20,24 @@ mongoose.connect('mongodb+srv://faiqsmongodb:sqX1hbl7QVUcLap4@lab4cluster.6hjnxg
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
 
+  const hbs = exphbs.create({
+    extname: '.hbs',
+    defaultLayout: 'main',
+    layoutsDir: path.join(__dirname, 'views/layouts'),
+    helpers: {
+      eq: (a, b) => a === b,
+      formatDate: (date) => date ? new Date(date).toISOString().split('T')[0] : ''
+    }
+  });
+
 // Handlebars Setup
 app.engine('.hbs', exphbs.engine({
   extname: '.hbs',           
   defaultLayout: 'main',      
   layoutsDir: path.join(__dirname, 'views/layouts'),
-  partialsDir: path.join(__dirname, 'views/partials'),
-  partialsDir: path.join(__dirname, 'views/animals')
+  partialsDir: path.join(__dirname, 'views/partials')
 }));
+
 
 app.set('view engine', '.hbs');
 

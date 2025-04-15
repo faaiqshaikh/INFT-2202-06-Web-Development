@@ -8,9 +8,9 @@ router.get('/list', animalController.showAllAnimals);
 router.get('/add', animalController.showEntryForm); 
 router.get('/edit/:id', animalController.showEditForm);
 
-
 // POST Routes
-router.post('/addAnimal', animalController.addAnimal);
+router.post('/add', animalController.addAnimal);
 router.post('/edit/:id', animalController.updateAnimal);
+router.post('/delete/:id', animalController.deleteAnimal);
 
 module.exports = router;

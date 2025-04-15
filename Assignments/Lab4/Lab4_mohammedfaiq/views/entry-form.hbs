@@ -1,5 +1,5 @@
 <div class="card shadow">
-  <div class="card-header bg-primary text-white">
+  <div class="card-header bg-success text-white">
     <h4>Add an Animal to the Database</h4>
   </div>
   <div class="card-body">
@@ -17,6 +17,10 @@
           <label class="form-label">Common Name</label>
           <input type="text" class="form-control" name="commonName" required>
         </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Given Name</label>
+          <input type="text" class="form-control" name="givenName" required>
+        </div>
       </div>
       <div class="mb-3">
         <label class="form-label">Gender</label>
@@ -29,15 +33,21 @@
           <label class="form-check-label">Female</label>
         </div>
       </div>
-      <div class="mb-3">
-        <label class="form-label">Date of Birth</label>
-        <input type="date" class="form-control" name="dateOfBirth" required>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Date of Birth</label>
+          <input type="date" class="form-control" name="dateOfBirth" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Age</label>
+          <input type="text" class="form-control" name="age" required>
+        </div>
       </div>
       <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" name="isTransportable">
+        <input type="checkbox" class="form-check-input" name="isTransportable" value="true">
         <label class="form-check-label">Transportable</label>
       </div>
-      <button type="submit" class="btn btn-primary">Add Animal</button>
+      <button type="submit" class="btn btn-success">Add Animal</button>
       <button type="reset" class="btn btn-secondary">Reset</button>
     </form>
   </div>
